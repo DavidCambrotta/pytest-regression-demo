@@ -24,5 +24,7 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run regression tests
+      env:
+        PYTHONPATH: .
       run: |
         pytest -m regression --junitxml=test-results.xml
